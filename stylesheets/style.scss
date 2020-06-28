@@ -212,7 +212,8 @@ a:hover {
 
 /* 主体框架 */
 .main {
-    min-height: 500px;
+    // min-height: 500px;
+    min-height: calc(100vh - 200px);
     position: relative;
 
     .inner {
@@ -764,6 +765,7 @@ a:hover {
     font-family: 'oswald', sans-serif;
     font-size: 13px;
     width: 100%;
+    position: relative;
 
     .footer-inner {
         display: flex;
