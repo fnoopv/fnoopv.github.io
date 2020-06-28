@@ -30,6 +30,8 @@
   
 
   
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.6.2/gitalk.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -238,6 +240,36 @@
               
             </div>
 
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    function loadGitalk(){
+      addScript('https://cdn.staticfile.org/gitalk/1.6.2/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: '46bc39a7d7382e3a6999',
+          clientSecret: '0a586b6f086336c4351de960ad9f3c9ca50bb2e8',
+          repo: 'fnoopv.github.io',
+          owner: 'fnoopv',
+          admin: 'fnoopv',
+          id: 'abe2f11339bee105f3f102052ebaa0c7',
+          language: 'zh-CN',
+          perPage: 15,
+          pagerDirection: 'last',
+          createIssueManually: 'true',
+          distractionFreeMode: 'false'
+        });
+        gitalk.render('gitalk-container');
+      });
+    }
+    createObserver(loadGitalk, 'gitalk-container');
+  </script>
+
+
+              </div>
             
           </div>
         </div>
