@@ -36,39 +36,5 @@
   
   
   
-  <entry>
-    <title>Test2</title>
-    <link href="/2020/06/28/Test2/"/>
-    <url>/2020/06/28/Test2/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Test2"><a href="#Test2" class="headerlink" title="Test2"></a>Test2</h1><p>this is test2</p><h2 id="test2-1"><a href="#test2-1" class="headerlink" title="test2-1"></a>test2-1</h2><p>this is test2-1</p><h2 id="test2-2"><a href="#test2-2" class="headerlink" title="test2-2"></a>test2-2</h2><p>this is test2-2</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Test</title>
-    <link href="/2020/06/28/Test/"/>
-    <url>/2020/06/28/Test/</url>
-    
-    <content type="html"><![CDATA[<h1 id="测试文章一级标题"><a href="#测试文章一级标题" class="headerlink" title="测试文章一级标题"></a>测试文章一级标题</h1><h2 id="测试文章二级标题"><a href="#测试文章二级标题" class="headerlink" title="测试文章二级标题"></a>测试文章二级标题</h2><p>测试内容</p><p><img src="https://pic.fnoop.com/img/20200628215654.png?imageslim" alt="测试图片"></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>test</tag>
-      
-      <tag>文章</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
   
 </search>
