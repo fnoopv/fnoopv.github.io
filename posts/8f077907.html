@@ -165,7 +165,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      708 字
+      706 字
     </span>
   
 
@@ -207,7 +207,12 @@
             
             <article class="markdown-body">
               <h2 id="使用Github-Action自动化部署Hexo博客"><a href="#使用Github-Action自动化部署Hexo博客" class="headerlink" title="使用Github Action自动化部署Hexo博客"></a>使用<code>Github Action</code>自动化部署Hexo博客</h2><h3 id="什么是CI-CD"><a href="#什么是CI-CD" class="headerlink" title="什么是CI/CD"></a>什么是<code>CI/CD</code></h3><p><code>CI/CD</code></p>
-<h3 id="为什么要用CI-CD工具"><a href="#为什么要用CI-CD工具" class="headerlink" title="为什么要用CI/CD工具"></a>为什么要用<code>CI/CD</code>工具</h3><p><code>Hexo</code>的使用方式决定了代码是放在本地的，放在远程公开仓库不安全。同时放在远程私有仓库需要同时做两步操作<br><code>hexo d -g</code>推送网站内容到<code>网站仓库</code>，以及<code>git push origin master</code>把源数据推送到自己的<code>源数据仓库</code>,<br>这种行为总是显得繁琐。所以就需要使用<code>CI/CD</code>工具进行自动化部署，免去<code>hexo -d g</code>的步骤，只需要推送源数据<br>到远程仓库，<code>CI/CD</code>工具会自动帮我们完成网站内容生成及部署两步，省心省时。  </p>
+<h3 id="为什么要用CI-CD工具"><a href="#为什么要用CI-CD工具" class="headerlink" title="为什么要用CI/CD工具"></a>为什么要用<code>CI/CD</code>工具</h3><p><code>Hexo</code>的使用方式决定了代码是放在本地的，放在远程公开仓库不安全。同时放在远程私有仓库需要同时做两步操作  </p>
+<ol>
+<li><code>hexo d -g</code>推送网站内容到<code>网站仓库</code>  </li>
+<li><code>git push origin master</code>把源数据推送到自己的<code>源数据仓库</code> </li>
+</ol>
+<p>这种行为总是显得繁琐。所以就需要使用<code>CI/CD</code>工具进行自动化部署，免去<code>hexo -d g</code>的步骤，只需要推送源数据<br>到远程仓库，<code>CI/CD</code>工具会自动帮我们完成网站内容生成及部署两步，省心省时。  </p>
 <h3 id="什么是Github-Action"><a href="#什么是Github-Action" class="headerlink" title="什么是Github Action"></a>什么是<code>Github Action</code></h3><p><code>Github Action</code><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Github Action官方文档  
 ">[2]</span></a></sup>是<code>Github</code>推出的<code>CI/CD</code>工具，类似于<code>jekenis</code>以及<code>Travis CI</code>，可以进行自动化部署。<br>不同的是<code>Github Actions</code>可以引用别人编写好的脚本，同时官方提供了<a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener"><code>Actions</code>市场</a>,<br>可以供大家寻找自己可以利用的<code>actions</code>脚本。</p>
 <h3 id="为什么要用Github-Action"><a href="#为什么要用Github-Action" class="headerlink" title="为什么要用Github Action"></a>为什么要用<code>Github Action</code></h3><ol>
