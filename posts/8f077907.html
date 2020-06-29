@@ -165,7 +165,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      706 字
+      707 字
     </span>
   
 
@@ -206,11 +206,12 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="使用Github-Action自动化部署Hexo博客"><a href="#使用Github-Action自动化部署Hexo博客" class="headerlink" title="使用Github Action自动化部署Hexo博客"></a>使用<code>Github Action</code>自动化部署Hexo博客</h2><h3 id="什么是CI-CD"><a href="#什么是CI-CD" class="headerlink" title="什么是CI/CD"></a>什么是<code>CI/CD</code></h3><p><code>CI/CD</code></p>
+              <h2 id="使用Github-Action自动化部署Hexo博客"><a href="#使用Github-Action自动化部署Hexo博客" class="headerlink" title="使用Github Action自动化部署Hexo博客"></a>使用<code>Github Action</code>自动化部署Hexo博客</h2><h3 id="什么是CI-CD"><a href="#什么是CI-CD" class="headerlink" title="什么是CI/CD"></a>什么是<code>CI/CD</code></h3><p><code>CI/CD</code>:<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="CI/CD 维基百科  
+">[1]</span></a></sup><br>CI(Continuous integration,持续集成)<br>CD(Continuous delivery,持续部署)  </p>
 <h3 id="为什么要用CI-CD工具"><a href="#为什么要用CI-CD工具" class="headerlink" title="为什么要用CI/CD工具"></a>为什么要用<code>CI/CD</code>工具</h3><p><code>Hexo</code>的使用方式决定了代码是放在本地的，放在远程公开仓库不安全。同时放在远程私有仓库需要同时做两步操作  </p>
 <ol>
 <li><code>hexo d -g</code>推送网站内容到<code>网站仓库</code>  </li>
-<li><code>git push origin master</code>把源数据推送到自己的<code>源数据仓库</code> </li>
+<li><code>git push origin master</code>把源数据推送到自己的<code>源数据仓库</code>  </li>
 </ol>
 <p>这种行为总是显得繁琐。所以就需要使用<code>CI/CD</code>工具进行自动化部署，免去<code>hexo -d g</code>的步骤，只需要推送源数据<br>到远程仓库，<code>CI/CD</code>工具会自动帮我们完成网站内容生成及部署两步，省心省时。  </p>
 <h3 id="什么是Github-Action"><a href="#什么是Github-Action" class="headerlink" title="什么是Github Action"></a>什么是<code>Github Action</code></h3><p><code>Github Action</code><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Github Action官方文档  
@@ -252,8 +253,7 @@
 <p>设置<code>yml</code>文件中的代码为自己<code>Github</code>的用户名及邮箱<br><img src="https://pic.fnoop.com/img/20200630005632.png?imageslim" srcset="/img/loading.gif" alt="set yml">  </p>
 <p>保存，新建一个文章并推送至<code>blogcode</code>仓库，在仓库的<code>Action</code>页面可以看到进度<br><img src="https://pic.fnoop.com/img/20200630005938.png?imageslim" srcset="/img/loading.gif" alt="action">  </p>
 <p>完工。  </p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>CI(Continuous integration,持续集成)<br>CD(Continuous delivery,持续部署)
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:1" class="footnote-text"><span><a href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener">CI/CD 维基百科</a>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener"><code>CI/CD</code> 维基百科</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a href="https://help.github.com/en/actions" target="_blank" rel="noopener"><code>Github Action</code>官方文档</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a href="https://github.com/marketplace/actions/hexo-action" target="_blank" rel="noopener"><code>Hexo Action</code>文档</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
