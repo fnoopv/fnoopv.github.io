@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      707 字
+      711 字
     </span>
   
 
@@ -204,54 +204,71 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="使用Github-Action自动化部署Hexo博客"><a href="#使用Github-Action自动化部署Hexo博客" class="headerlink" title="使用Github Action自动化部署Hexo博客"></a>使用<code>Github Action</code>自动化部署Hexo博客</h2><h3 id="什么是CI-CD"><a href="#什么是CI-CD" class="headerlink" title="什么是CI/CD"></a>什么是<code>CI/CD</code></h3><p><code>CI/CD</code>:<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="CI/CD 维基百科  
-">[1]</span></a></sup><br>CI(Continuous integration,持续集成)<br>CD(Continuous delivery,持续部署)  </p>
-<h3 id="为什么要用CI-CD工具"><a href="#为什么要用CI-CD工具" class="headerlink" title="为什么要用CI/CD工具"></a>为什么要用<code>CI/CD</code>工具</h3><p><code>Hexo</code>的使用方式决定了代码是放在本地的，放在远程公开仓库不安全。同时放在远程私有仓库需要同时做两步操作  </p>
+              <h2 id="使用github-action自动化部署hexo博客"><a class="markdownIt-Anchor" href="#使用github-action自动化部署hexo博客"></a> 使用<code>Github Action</code>自动化部署Hexo博客</h2>
+<h3 id="什么是cicd"><a class="markdownIt-Anchor" href="#什么是cicd"></a> 什么是<code>CI/CD</code></h3>
+<p><code>CI/CD</code>:<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="CI/CD 维基百科
+">[1]</span></a></sup><br />
+CI(Continuous integration,持续集成)<br />
+CD(Continuous delivery,持续部署)</p>
+<h3 id="为什么要用cicd工具"><a class="markdownIt-Anchor" href="#为什么要用cicd工具"></a> 为什么要用<code>CI/CD</code>工具</h3>
+<p><code>Hexo</code>的使用方式决定了代码是放在本地的，放在远程公开仓库不安全。同时放在远程私有仓库需要同时做两步操作</p>
 <ol>
-<li><code>hexo d -g</code>推送网站内容到<code>网站仓库</code>  </li>
-<li><code>git push origin master</code>把源数据推送到自己的<code>源数据仓库</code>  </li>
+<li><code>hexo d -g</code>推送网站内容到<code>网站仓库</code></li>
+<li><code>git push origin master</code>把源数据推送到自己的<code>源数据仓库</code></li>
 </ol>
-<p>这种行为总是显得繁琐。所以就需要使用<code>CI/CD</code>工具进行自动化部署，免去<code>hexo -d g</code>的步骤，只需要推送源数据<br>到远程仓库，<code>CI/CD</code>工具会自动帮我们完成网站内容生成及部署两步，省心省时。  </p>
-<h3 id="什么是Github-Action"><a href="#什么是Github-Action" class="headerlink" title="什么是Github Action"></a>什么是<code>Github Action</code></h3><p><code>Github Action</code><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Github Action官方文档  
-">[2]</span></a></sup>是<code>Github</code>推出的<code>CI/CD</code>工具，类似于<code>jekenis</code>以及<code>Travis CI</code>，可以进行自动化部署。<br>不同的是<code>Github Actions</code>可以引用别人编写好的脚本，同时官方提供了<a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener"><code>Actions</code>市场</a>,<br>可以供大家寻找自己可以利用的<code>actions</code>脚本。</p>
-<h3 id="为什么要用Github-Action"><a href="#为什么要用Github-Action" class="headerlink" title="为什么要用Github Action"></a>为什么要用<code>Github Action</code></h3><ol>
-<li><code>Github Actions</code>是<code>Github</code>推出的一款<code>CI/CD</code>工具，由于本人的博客托管在<code>Github</code>，就选择了<code>Github Actions</code>。  </li>
-<li><code>Github Actions</code>上有现成的<code>hexo</code>部署脚本，可以直接引用和参考。(最重要的一点)  </li>
-</ol>
-<h3 id="如何使用Github-Action"><a href="#如何使用Github-Action" class="headerlink" title="如何使用Github Action"></a>如何使用<code>Github Action</code></h3><p>前提条件是拥有两个仓库:  </p>
+<p>这种行为总是显得繁琐。所以就需要使用<code>CI/CD</code>工具进行自动化部署，免去<code>hexo -d g</code>的步骤，只需要推送源数据<br />
+到远程仓库，<code>CI/CD</code>工具会自动帮我们完成网站内容生成及部署两步，省心省时。</p>
+<h3 id="什么是github-action"><a class="markdownIt-Anchor" href="#什么是github-action"></a> 什么是<code>Github Action</code></h3>
+<p><code>Github Action</code><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Github Action官方文档
+">[2]</span></a></sup>是<code>Github</code>推出的<code>CI/CD</code>工具，类似于<code>jekenis</code>以及<code>Travis CI</code>，可以进行自动化部署。<br />
+不同的是<code>Github Actions</code>可以引用别人编写好的脚本，同时官方提供了<a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener"><code>Actions</code>市场</a>,<br />
+可以供大家寻找自己可以利用的<code>actions</code>脚本。</p>
+<h3 id="为什么要用github-action"><a class="markdownIt-Anchor" href="#为什么要用github-action"></a> 为什么要用<code>Github Action</code></h3>
 <ol>
-<li><code>public</code>状态的博客仓库，即名称为<code>username.github.io</code>的仓库  </li>
-<li><code>private</code>状态的存放博客源数据的仓库，比如<code>blogcode</code>  </li>
+<li><code>Github Actions</code>是<code>Github</code>推出的一款<code>CI/CD</code>工具，由于本人的博客托管在<code>Github</code>，就选择了<code>Github Actions</code>。</li>
+<li><code>Github Actions</code>上有现成的<code>hexo</code>部署脚本，可以直接引用和参考。(最重要的一点)</li>
 </ol>
-<p>部署过程：  </p>
+<h3 id="如何使用github-action"><a class="markdownIt-Anchor" href="#如何使用github-action"></a> 如何使用<code>Github Action</code></h3>
+<p>前提条件是拥有两个仓库:</p>
 <ol>
-<li>生成新的密钥对  </li>
+<li><code>public</code>状态的博客仓库，即名称为<code>username.github.io</code>的仓库</li>
+<li><code>private</code>状态的存放博客源数据的仓库，比如<code>blogcode</code></li>
+</ol>
+<p>部署过程：</p>
+<ol>
+<li>生成新的密钥对</li>
 </ol>
 <pre><code class="hljs bash">ssh-keygen -t rsa -f ~/.ssh/id_rsa_x -C <span class="hljs-string">"your email"</span></code></pre>
-
 <blockquote>
 <p><code>your email</code>为你的<code>Github</code>邮箱</p>
 </blockquote>
-<p>命令会生成密钥对，即私钥<code>id_rsa_x</code>及公钥<code>id_rsa_x.pub</code>,存放在用户目录下的<code>.ssh</code>文件夹中  </p>
+<p>命令会生成密钥对，即私钥<code>id_rsa_x</code>及公钥<code>id_rsa_x.pub</code>,存放在用户目录下的<code>.ssh</code>文件夹中</p>
 <ol start="2">
-<li>添加密钥  </li>
+<li>添加密钥</li>
 </ol>
-<p>在<code>blogcode</code>仓库的<code>Settings</code>-&gt;<code>Secrets</code>中新建一个条目，名称为<code>DEPLOY_KEY</code>(必须为这个名称，其他任何名称都不生效),内容为<code>id_rsa_x</code>私钥的内容，可以使用<code>cat ~/.ssh/id_rsa_x</code>查看<br><img src="https://pic.fnoop.com/img/20200630003622.png?imageslim" srcset="/img/loading.gif" alt="Secrets"></p>
+<p>在<code>blogcode</code>仓库的<code>Settings</code>-&gt;<code>Secrets</code>中新建一个条目，名称为<code>DEPLOY_KEY</code>(必须为这个名称，其他任何名称都不生效),内容为<code>id_rsa_x</code>私钥的内容，可以使用<code>cat ~/.ssh/id_rsa_x</code>查看<br />
+<img src="https://pic.fnoop.com/img/20200630003622.png?imageslim" srcset="/img/loading.gif" alt="Secrets" /></p>
 <blockquote>
-<p>私钥应该以 —–BEGIN OPENSSH PRIVATE KEY—– 开头<br>以 —–END OPENSSH PRIVATE KEY—– 结尾</p>
+<p>私钥应该以 -----BEGIN OPENSSH PRIVATE KEY----- 开头<br />
+以 -----END OPENSSH PRIVATE KEY----- 结尾</p>
 </blockquote>
-<p>在<code>username.github.com</code>仓库中的<code>Settings</code>-&gt;<code>Deploy keys</code>中新建一个条目，名称任意，内容为<code>id_rsa_x.pub</code>公钥的内容，可以使用<code>cat ~/.ssh/id_rsa_x.pub</code>查看<br><img src="https://pic.fnoop.com/img/20200630004346.png?imageslim" srcset="/img/loading.gif" alt="Deploy keys">  </p>
+<p>在<code>username.github.com</code>仓库中的<code>Settings</code>-&gt;<code>Deploy keys</code>中新建一个条目，名称任意，内容为<code>id_rsa_x.pub</code>公钥的内容，可以使用<code>cat ~/.ssh/id_rsa_x.pub</code>查看<br />
+<img src="https://pic.fnoop.com/img/20200630004346.png?imageslim" srcset="/img/loading.gif" alt="Deploy keys" /></p>
 <blockquote>
 <p>公钥应该以<code>ssh-rsa</code>,|<code>ssh-ed25519</code>|<code>ecdsa-sha2-nistp256</code>|<code>ecdsa-sha2-nistp384</code>|<code>ecdsa-sha2-nistp521</code>开头</p>
 </blockquote>
-<p>在本地的<code>hexo</code>代码仓库中新建目录<code>.github</code>,再在<code>.github</code>中新建<code>workflows</code>目录，在<code>workflow</code>目录中新建一个<code>yml</code>文件，名字任意  </p>
-<p><img src="https://pic.fnoop.com/img/20200630004933.png?imageslim" srcset="/img/loading.gif" alt="workflow"></p>
-<p>打开推荐的<a href="https://github.com/marketplace/actions/hexo-action#example-workflow---hexo-deploy" target="_blank" rel="noopener">Hexo Action</a><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="Hexo Action文档  
-">[3]</span></a></sup>,复制<code>Example workflow</code>中的代码到新建的<code>yml</code>文件中<br><img src="https://pic.fnoop.com/img/20200630005342.png?imageslim" srcset="/img/loading.gif" alt="workflow code">  </p>
-<p>设置<code>yml</code>文件中的代码为自己<code>Github</code>的用户名及邮箱<br><img src="https://pic.fnoop.com/img/20200630005632.png?imageslim" srcset="/img/loading.gif" alt="set yml">  </p>
-<p>保存，新建一个文章并推送至<code>blogcode</code>仓库，在仓库的<code>Action</code>页面可以看到进度<br><img src="https://pic.fnoop.com/img/20200630005938.png?imageslim" srcset="/img/loading.gif" alt="action">  </p>
-<p>完工。  </p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener"><code>CI/CD</code> 维基百科</a>
+<p>在本地的<code>hexo</code>代码仓库中新建目录<code>.github</code>,再在<code>.github</code>中新建<code>workflows</code>目录，在<code>workflow</code>目录中新建一个<code>yml</code>文件，名字任意</p>
+<p><img src="https://pic.fnoop.com/img/20200630004933.png?imageslim" srcset="/img/loading.gif" alt="workflow" /></p>
+<p>打开推荐的<a href="https://github.com/marketplace/actions/hexo-action#example-workflow---hexo-deploy" target="_blank" rel="noopener">Hexo Action</a><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="Hexo Action文档
+">[3]</span></a></sup>,复制<code>Example workflow</code>中的代码到新建的<code>yml</code>文件中<br />
+<img src="https://pic.fnoop.com/img/20200630005342.png?imageslim" srcset="/img/loading.gif" alt="workflow code" /></p>
+<p>设置<code>yml</code>文件中的代码为自己<code>Github</code>的用户名及邮箱<br />
+<img src="https://pic.fnoop.com/img/20200630005632.png?imageslim" srcset="/img/loading.gif" alt="set yml" /></p>
+<p>保存，新建一个文章并推送至<code>blogcode</code>仓库，在仓库的<code>Action</code>页面可以看到进度<br />
+<img src="https://pic.fnoop.com/img/20200630005938.png?imageslim" srcset="/img/loading.gif" alt="action" /></p>
+<p>完工。</p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener"><code>CI/CD</code> 维基百科</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a href="https://help.github.com/en/actions" target="_blank" rel="noopener"><code>Github Action</code>官方文档</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a href="https://github.com/marketplace/actions/hexo-action" target="_blank" rel="noopener"><code>Hexo Action</code>文档</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>

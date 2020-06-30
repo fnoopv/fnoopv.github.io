@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      429 字
+      430 字
     </span>
   
 
@@ -204,37 +204,48 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <h2 id="服务器最佳TLS配置"><a href="#服务器最佳TLS配置" class="headerlink" title="服务器最佳TLS配置"></a>服务器最佳TLS配置</h2><hr>
+              <h2 id="服务器最佳tls配置"><a class="markdownIt-Anchor" href="#服务器最佳tls配置"></a> 服务器最佳TLS配置</h2>
+<hr />
 <blockquote>
 <p>需要相对应的OpenSSL版本支持</p>
 </blockquote>
-<p>mozilla组织提供了一个可以生成最佳安全配置的网站，<a href="https://ssl-config.mozilla.org/" target="_blank" rel="noopener">ssl-config</a>，看图<br><img src="https://pic.fnoop.com/img/20200629002725.png?imageslim" srcset="/img/loading.gif" alt="ssl-config">  </p>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
-<li><p><code>齐全</code> 支持的软件数量高达<code>19</code>款，涵盖了大部分主流的软件</p>
+<p>mozilla组织提供了一个可以生成最佳安全配置的网站，<a href="https://ssl-config.mozilla.org/" target="_blank" rel="noopener">ssl-config</a>，看图<br />
+<img src="https://pic.fnoop.com/img/20200629002725.png?imageslim" srcset="/img/loading.gif" alt="ssl-config" /></p>
+<h3 id="优势"><a class="markdownIt-Anchor" href="#优势"></a> 优势</h3>
+<ul>
+<li>
+<p><code>齐全</code> 支持的软件数量高达<code>19</code>款，涵盖了大部分主流的软件</p>
 </li>
-<li><p><code>丰富</code> 提供的安全配置建议分为了三个级别，分别是<code>Modern</code>、<code>Intermediate</code>、<code>Old</code> 三种 ,三种的含义分别如下  </p>
+<li>
+<p><code>丰富</code> 提供的安全配置建议分为了三个级别，分别是<code>Modern</code>、<code>Intermediate</code>、<code>Old</code> 三种 ,三种的含义分别如下</p>
 <ol>
 <li><code>Moden</code>: 最激进的配置，安全性最高，只使用目前最新的安全方案，舍弃其他所有的方案，比如在Web中不支持<code>TLS1.1</code>及<code>TLS1.2</code></li>
-<li><code>Intermediate</code>: 主流配置，是兼容性即安全性兼得的一种配置方案  </li>
-<li><code>Old</code>: 过时的配置，通常安全性较低，不建议使用  </li>
+<li><code>Intermediate</code>: 主流配置，是兼容性即安全性兼得的一种配置方案</li>
+<li><code>Old</code>: 过时的配置，通常安全性较低，不建议使用</li>
 </ol>
 </li>
-<li><p><code>简单</code> 只需要点击下鼠标，即可获取相对应的安全设置建议</p>
+<li>
+<p><code>简单</code> 只需要点击下鼠标，即可获取相对应的安全设置建议</p>
 </li>
-<li><p><code>精准</code> 可以输入软件版本及<code>Openssl</code>版本进行精准匹配，不会出现配置无法使用的情况</p>
+<li>
+<p><code>精准</code> 可以输入软件版本及<code>Openssl</code>版本进行精准匹配，不会出现配置无法使用的情况</p>
 </li>
-<li><p><code>提供额外的选项</code> 可以选择是否应用<code>HSTS</code>及<code>OCSP Stapling</code>  </p>
+<li>
+<p><code>提供额外的选项</code> 可以选择是否应用<code>HSTS</code>及<code>OCSP Stapling</code></p>
 </li>
 </ul>
-<p><img src="https://pic.fnoop.com/img/20200629003945.png?imageslim" srcset="/img/loading.gif" alt="content"></p>
+<p><img src="https://pic.fnoop.com/img/20200629003945.png?imageslim" srcset="/img/loading.gif" alt="content" /></p>
 <blockquote>
-<p><code>HSTS</code>的作用是强制客户端使用HTTPS与服务端连接<br><code>OCSP Stapling</code>的作用是server端把自己的站点证书和中间证书以及根证书打包一起下发到客户端，省去客户端查询的过程</p>
+<p><code>HSTS</code>的作用是强制客户端使用HTTPS与服务端连接<br />
+<code>OCSP Stapling</code>的作用是server端把自己的站点证书和中间证书以及根证书打包一起下发到客户端，省去客户端查询的过程</p>
 </blockquote>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>选择<code>Server Software</code>，及需要的安全配置级别，输入软件版本和<code>openssl</code>版本即可  </p>
+<h3 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h3>
+<p>选择<code>Server Software</code>，及需要的安全配置级别，输入软件版本和<code>openssl</code>版本即可</p>
 <blockquote>
 <p><code>HSTS</code>功能和<code>OCSP Stapling</code>功能取决如软件是否支持</p>
 </blockquote>
-<h3 id="详细安全支持信息"><a href="#详细安全支持信息" class="headerlink" title="详细安全支持信息"></a>详细安全支持信息</h3><p>三种配置建议的差异、支持等可以看<a href="https://wiki.mozilla.org/Security/Server_Side_TLS" target="_blank" rel="noopener">wiki</a>，wiki中详细说明了<code>TLS1.3</code>、<code>TLS1.2</code>支持的密码套件以及<code>Modern</code>、<code>Intermediate</code>、<code>Old</code>三种配置建议中支持的密码套件。</p>
+<h3 id="详细安全支持信息"><a class="markdownIt-Anchor" href="#详细安全支持信息"></a> 详细安全支持信息</h3>
+<p>三种配置建议的差异、支持等可以看<a href="https://wiki.mozilla.org/Security/Server_Side_TLS" target="_blank" rel="noopener">wiki</a>，wiki中详细说明了<code>TLS1.3</code>、<code>TLS1.2</code>支持的密码套件以及<code>Modern</code>、<code>Intermediate</code>、<code>Old</code>三种配置建议中支持的密码套件。</p>
 
             </article>
             <hr>
