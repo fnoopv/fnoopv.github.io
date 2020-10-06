@@ -27,7 +27,10 @@
 
   
     
-    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
   
 
   
@@ -35,11 +38,11 @@
 
 <!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_6peoq002giu.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -49,7 +52,7 @@
 
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
 
 <body>
@@ -157,21 +160,24 @@
             </span>
 
             
-              
-  <div class="mt-3 post-meta">
-    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-06-29 23:52" pubdate>
-      2020年6月29日 晚上
-    </time>
-  </div>
-
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-06-29 23:52" pubdate>
+        2020年6月29日 晚上
+      </time>
+    </span>
+  
+</div>
 
 <div class="mt-1">
   
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      711 字
+      713 字
     </span>
   
 
@@ -231,7 +237,7 @@ CD(Continuous delivery,持续部署)</p>
 <h3 id="什么是github-action"><a class="markdownIt-Anchor" href="#什么是github-action"></a> 什么是<code>Github Action</code></h3>
 <p><code>Github Action</code><sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Github Action官方文档
 ">[2]</span></a></sup>是<code>Github</code>推出的<code>CI/CD</code>工具，类似于<code>jekenis</code>以及<code>Travis CI</code>，可以进行自动化部署。<br />
-不同的是<code>Github Actions</code>可以引用别人编写好的脚本，同时官方提供了<a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener"><code>Actions</code>市场</a>,<br />
+不同的是<code>Github Actions</code>可以引用别人编写好的脚本，同时官方提供了<a target="_blank" rel="noopener" href="https://github.com/marketplace?type=actions"><code>Actions</code>市场</a>,<br />
 可以供大家寻找自己可以利用的<code>actions</code>脚本。</p>
 <h3 id="为什么要用github-action"><a class="markdownIt-Anchor" href="#为什么要用github-action"></a> 为什么要用<code>Github Action</code></h3>
 <ol>
@@ -248,7 +254,7 @@ CD(Continuous delivery,持续部署)</p>
 <ol>
 <li>生成新的密钥对</li>
 </ol>
-<pre><code class="hljs bash">ssh-keygen -t rsa -f ~/.ssh/id_rsa_x -C <span class="hljs-string">"your email"</span></code></pre>
+<pre><code class="hljs bash">ssh-keygen -t rsa -f ~/.ssh/id_rsa_x -C <span class="hljs-string">&quot;your email&quot;</span></code></pre>
 <blockquote>
 <p><code>your email</code>为你的<code>Github</code>邮箱</p>
 </blockquote>
@@ -269,7 +275,7 @@ CD(Continuous delivery,持续部署)</p>
 </blockquote>
 <p>在本地的<code>hexo</code>代码仓库中新建目录<code>.github</code>,再在<code>.github</code>中新建<code>workflows</code>目录，在<code>workflow</code>目录中新建一个<code>yml</code>文件，名字任意</p>
 <p><img src="https://pic.fnoop.com/img/20200630004933.png?imageslim" srcset="/img/loading.gif" alt="workflow" /></p>
-<p>打开推荐的<a href="https://github.com/marketplace/actions/hexo-action#example-workflow---hexo-deploy" target="_blank" rel="noopener">Hexo Action</a><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="Hexo Action文档
+<p>打开推荐的<a target="_blank" rel="noopener" href="https://github.com/marketplace/actions/hexo-action#example-workflow---hexo-deploy">Hexo Action</a><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="Hexo Action文档
 ">[3]</span></a></sup>,复制<code>Example workflow</code>中的代码到新建的<code>yml</code>文件中<br />
 <img src="https://pic.fnoop.com/img/20200630005342.png?imageslim" srcset="/img/loading.gif" alt="workflow code" /></p>
 <p>设置<code>yml</code>文件中的代码为自己<code>Github</code>的用户名及邮箱<br />
@@ -278,9 +284,9 @@ CD(Continuous delivery,持续部署)</p>
 <img src="https://pic.fnoop.com/img/20200630005938.png?imageslim" srcset="/img/loading.gif" alt="action" /></p>
 <p>完工。</p>
 <h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener"><code>CI/CD</code> 维基百科</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a href="https://help.github.com/en/actions" target="_blank" rel="noopener"><code>Github Action</code>官方文档</a>
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a href="https://github.com/marketplace/actions/hexo-action" target="_blank" rel="noopener"><code>Hexo Action</code>文档</a>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CI/CD"><code>CI/CD</code> 维基百科</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://help.github.com/en/actions"><code>Github Action</code>官方文档</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://github.com/marketplace/actions/hexo-action"><code>Hexo Action</code>文档</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
@@ -308,7 +314,7 @@ CD(Continuous delivery,持续部署)</p>
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
               
                 <div class="post-prevnext row">
@@ -357,7 +363,7 @@ CD(Continuous delivery,持续部署)</p>
     }
     waitElementVisible('vcomments', loadValine);
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
       powered by Valine.</a></noscript>
 
 
@@ -488,6 +494,10 @@ CD(Continuous delivery,持续部署)</p>
 
   
     <script  src="/js/lazyload.js" ></script>
+  
+
+
+
   
 
 
@@ -638,8 +648,6 @@ CD(Continuous delivery,持续部署)</p>
       ga('send', 'pageview');
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
-  
-
   
 
   

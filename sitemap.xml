@@ -4,22 +4,96 @@
   <url>
     <loc>https://blog.fnoop.com/posts/c651f6d6.html</loc>
     
-    <lastmod>2020-09-03T12:55:40.886Z</lastmod>
+    <lastmod>2020-10-06</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.fnoop.com/posts/8f077907.html</loc>
     
-    <lastmod>2020-09-03T12:55:40.886Z</lastmod>
+    <lastmod>2020-10-06</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.fnoop.com/about/index.html</loc>
     
-    <lastmod>2020-09-03T12:55:40.886Z</lastmod>
+    <lastmod>2020-10-06</lastmod>
     
+  </url>
+  
+
+  <url>
+    <loc>https://blog.fnoop.com/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://blog.fnoop.com/tags/TLS/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fnoop.com/tags/SSL/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fnoop.com/tags/Linux/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fnoop.com/tags/Security/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fnoop.com/tags/hexo/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fnoop.com/tags/Github-Action/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fnoop.com/tags/CI-CD/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://blog.fnoop.com/categories/%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.fnoop.com/categories/Web/</loc>
+    <lastmod>2020-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
 </urlset>
