@@ -17,9 +17,25 @@
   <meta name="description" content="点滴">
   <meta name="author" content="fnoopv">
   <meta name="keywords" content="linux,Golang,PHP">
-  <title>标签 - Linux - Fnoopv</title>
+  <title>CentOS SCL 软件集 - Fnoopv</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -141,14 +157,51 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('https://pic.fnoop.com/img/20201220234639.png?imageslim') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - Linux">
+            <span class="h2" id="subtitle" title="CentOS SCL 软件集">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-20 23:05" pubdate>
+        2020年12月20日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      387 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -161,52 +214,160 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 3 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/posts/24062f98.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">CentOS SCL 软件集</span>
-      <time style="float: right;">12-20</time>
-    </a>
-  
-    
-    <a href="/posts/f576279e.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">CentOS 7 升级openssl 1.1.1i 版本</span>
-      <time style="float: right;">12-20</time>
-    </a>
-  
-    
-    <a href="/posts/c651f6d6.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">TLS最佳实践</span>
-      <time style="float: right;">06-29</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CentOS SCL 软件集</h1>
+            
+            <div class="markdown-body">
+              <h2 id="centos-scl-介绍及使用"><a class="markdownIt-Anchor" href="#centos-scl-介绍及使用"></a> CentOS SCL 介绍及使用</h2>
+<blockquote>
+<p>众所周知，RHEL 及 CentOS 的软件版本更新很慢，编译安装新版本软件时很痛苦。<br />
+SCL 适用于 Centos，RHEL 请使用RHSCL</p>
+</blockquote>
+<p><code>SCL</code> 全称为 <code>Software Collections SIG</code>，用于解决 <code>Centos</code> 官方源中软件太老(毕竟稳定第一)且在系统中编译安装难的问题(编译较新版本的软件时可能存在依赖黑洞)，提供上游新的工具集及常用软件。<code>SCL</code>会提供一个新的运行时环境，避免影响现有系统环境。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://wiki.centos.org/SpecialInterestGroup/SCLo/CollectionsList">官方详细说明</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.centos.org/SpecialInterestGroup/SCLo/CollectionsList">可用软件列表</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sclorg/centos-release-scl">Github文档</a></li>
+</ul>
+<h3 id="1-安装仓库-repo"><a class="markdownIt-Anchor" href="#1-安装仓库-repo"></a> 1. 安装仓库 repo</h3>
+<p>参考 GitHub说明文档，执行</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># yum install centos-release-scl scl-utils-build -y</span>
+<span class="hljs-comment"># yum update</span></code></pre>
+<h3 id="2-搜索及安装软件"><a class="markdownIt-Anchor" href="#2-搜索及安装软件"></a> 2. 搜索及安装软件</h3>
+<p>列出所有可用软件，也可以同时使用<code>grep</code>进行过滤</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># yum list all --enablerepo=&#x27;centos-sclo-rh&#x27;</span></code></pre>
+<h3 id="3-安装开发工具包"><a class="markdownIt-Anchor" href="#3-安装开发工具包"></a> 3. 安装开发工具包</h3>
+<blockquote>
+<p>安装新版本开发工具包，包含 gcc gcc-c++ gdb等，名称为devtoolset-x-toolchain，<code>x</code>为版本</p>
+</blockquote>
+<pre><code class="hljs bash"><span class="hljs-comment"># 安装8版本的工具链</span>
+<span class="hljs-comment"># yum install devtoolset-8-toolchain</span></code></pre>
+<h3 id="4-使用"><a class="markdownIt-Anchor" href="#4-使用"></a> 4. 使用</h3>
+<pre><code class="hljs bash"><span class="hljs-comment"># 检查当前gcc版本</span>
+<span class="hljs-comment"># gcc --version</span>
+gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44)
+Copyright © 2015 Free Software Foundation, Inc.
+<span class="hljs-comment"># 使用新的工具链环境</span>
+<span class="hljs-comment"># scl enable devtoolset-8 bash</span>
+<span class="hljs-comment"># 检查gcc版本</span>
+<span class="hljs-comment"># gcc --version</span>
+gcc (GCC) 8.3.1 20190311 (Red Hat 8.3.1-3)
+Copyright (C) 2018 Free Software Foundation, Inc.</code></pre>
+<h3 id="5-其他"><a class="markdownIt-Anchor" href="#5-其他"></a> 5. 其他</h3>
+<ol>
+<li>进入新的<code>bash</code>后可以进行一些工作了，比如编译较新版本的<code>nginx</code>(需要较新版本的gcc)</li>
+<li>可以使用<code>exit</code>退出当前工具链环境</li>
+</ol>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CentOS/">CentOS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/SCL/">SCL</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/f576279e.html">
+                        <span class="hidden-mobile">CentOS 7 升级openssl 1.1.1i 版本</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "UO6FzJ46U1aWxXz9uUj1u3TI-gzGzoHsz",
+          app_key: "2IV2ayb6J1zofSiLBFxuBpn4",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "https://talk.fnoop.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -332,9 +493,15 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
 
 
 
@@ -378,6 +545,13 @@
 
 
 
+
+  <script  src="https://cdn.staticfile.org/mermaid/8.8.2/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
 
 
 
