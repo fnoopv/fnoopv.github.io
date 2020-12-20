@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>CentOS 7 升级openssl 1.1.1i 版本</title>
+    <link href="/posts/f576279e.html"/>
+    <url>/posts/f576279e.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="centos-7-升级openssl-111i-版本"><a class="markdownIt-Anchor" href="#centos-7-升级openssl-111i-版本"></a> Centos 7 升级openssl 1.1.1i 版本</h2><h3 id="1-下载openssl-111i-版本源码"><a class="markdownIt-Anchor" href="#1-下载openssl-111i-版本源码"></a> 1. 下载openssl 1.1.1i 版本源码</h3><pre><code class="hljs bash"><span class="hljs-comment"># wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1i.tar.gz</span></code></pre><h3 id="2-解压下载文件"><a class="markdownIt-Anchor" href="#2-解压下载文件"></a> 2. 解压下载文件</h3><pre><code class="hljs bash"><span class="hljs-comment"># tar -xvzf OpenSSL_1_1_1i.tar.gz</span></code></pre><h3 id="3-编译安装"><a class="markdownIt-Anchor" href="#3-编译安装"></a> 3. 编译安装</h3><pre><code class="hljs bash"><span class="hljs-comment"># cd OpenSSL_1_1_1i</span><span class="hljs-comment"># ./config --prefix=/usr/local/openssl</span><span class="hljs-comment"># make &amp;&amp; make install</span></code></pre><h3 id="4-替换当前版本"><a class="markdownIt-Anchor" href="#4-替换当前版本"></a> 4. 替换当前版本</h3><pre><code class="hljs bash"><span class="hljs-comment">#mv /usr/bin/openssl /usr/bin/openssl.old</span><span class="hljs-comment"># mv /usr/lib64/openssl /usr/lib64/openssl.old</span><span class="hljs-comment"># mv /usr/lib64/libssl.so /usr/lib64/libssl.so.old</span><span class="hljs-comment"># ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl</span><span class="hljs-comment"># ln -s /usr/local/openssl/include/openssl /usr/include/openssl</span><span class="hljs-comment"># ln -s /usr/local/openssl/lib/libssl.so /usr/lib64/libssl.so</span><span class="hljs-comment"># echo &quot;/usr/local/openssl/lib&quot; &gt;&gt; /etc/ld.so.conf</span></code></pre><h3 id="5-验证是否成功"><a class="markdownIt-Anchor" href="#5-验证是否成功"></a> 5. 验证是否成功</h3><pre><code class="hljs bash"><span class="hljs-comment"># openssl version</span>OpenSSL 1.1.1i  8 Dec 2020</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>安全</category>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CentOS</tag>
+      
+      <tag>SSL</tag>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Golang使用ldflags传参</title>
     <link href="/posts/189a171e.html"/>
     <url>/posts/189a171e.html</url>
@@ -76,11 +107,11 @@
     
     <tags>
       
-      <tag>TLS</tag>
-      
       <tag>SSL</tag>
       
       <tag>Linux</tag>
+      
+      <tag>TLS</tag>
       
       <tag>Security</tag>
       
