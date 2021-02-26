@@ -34,7 +34,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github.min.css" />
     
   
 
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      141 字
+      147 字
     </span>
   
 
@@ -245,18 +245,14 @@
 <ol>
 <li>假设工程目录如下, <code>go mod</code>名称为<code>github.com/fnoopv/traffice</code></li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">taffic<br>  cmd<br>    root.go<br>    version.go<br>  main.go<br>  go.mod<br>  go.sum<br></code></pre></td></tr></table></figure>
-<ol start="2">
-<li>向<code>main.go</code>文件传参的方式</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">go build -ldflags <span class="hljs-string">&quot;-X main.Version=0.0.1 -X &#x27;main.GitVersion=`git version`&#x27;&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs console">taffic<br>  cmd<br>    root.go<br>    version.go<br>  main.go<br>  go.mod<br>  go.sum<br></code></pre></td></tr></table></figure>
+<p>2 向<code>main.go</code>文件传参的方式</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs console">fnoopv@linux:~$ go build -ldflags &quot;-X main.Version=0.0.1 -X &#x27;main.GitVersion=`git version`&#x27;&quot;<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p><code>main.Version</code>中的<code>main</code>是<code>main</code>包，不是<code>main.go</code>文件</p>
 </blockquote>
-<ol start="3">
-<li>向子包中的变量传参，比如<code>cmd/version.go</code>，传参方式为</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">go build -ldflags <span class="hljs-string">&quot;-X &#x27;github.com/fnoopv/traffice/cmd.Version=0.0.1&#x27; -X &#x27;github.com/fnoopv/traffice/cmd.GitVersion=`git version`&#x27;&quot;</span><br></code></pre></td></tr></table></figure>
+<p>3 向子包中的变量传参，比如<code>cmd/version.go</code>，传参方式为</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs console">fnoopv@linux:~$ go build -ldflags &quot;-X &#x27;github.com/fnoopv/traffice/cmd.Version=0.0.1&#x27; -X &#x27;github.com/fnoopv/traffice/cmd.GitVersion=`git version`&#x27;&quot;<br></code></pre></td></tr></table></figure>
 <p>即为 <code>-X '&#123;go mod名称&#125;/包名.&#123;变量名&#125;'</code></p>
 
             </div>

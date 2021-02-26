@@ -34,7 +34,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github.min.css" />
     
   
 
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      713 字
+      715 字
     </span>
   
 
@@ -269,17 +269,13 @@ CD(Continuous delivery,持续部署)</p>
 <li><code>private</code>状态的存放博客源数据的仓库，比如<code>blogcode</code></li>
 </ol>
 <p>部署过程：</p>
-<ol>
-<li>生成新的密钥对</li>
-</ol>
+<p>1 生成新的密钥对</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -f ~/.ssh/id_rsa_x -C <span class="hljs-string">&quot;your email&quot;</span><br></code></pre></td></tr></table></figure>
 <blockquote>
 <p><code>your email</code>为你的<code>Github</code>邮箱</p>
 </blockquote>
 <p>命令会生成密钥对，即私钥<code>id_rsa_x</code>及公钥<code>id_rsa_x.pub</code>,存放在用户目录下的<code>.ssh</code>文件夹中</p>
-<ol start="2">
-<li>添加密钥</li>
-</ol>
+<p>2 添加密钥</p>
 <p>在<code>blogcode</code>仓库的<code>Settings</code>-&gt;<code>Secrets</code>中新建一个条目，名称为<code>DEPLOY_KEY</code>(必须为这个名称，其他任何名称都不生效),内容为<code>id_rsa_x</code>私钥的内容，可以使用<code>cat ~/.ssh/id_rsa_x</code>查看<br />
 <img src="https://pic.fnoop.com/img/20200630003622.png?imageslim" srcset="/img/loading.gif" alt="Secrets" /></p>
 <blockquote>

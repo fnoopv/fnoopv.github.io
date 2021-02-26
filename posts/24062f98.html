@@ -34,7 +34,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github.min.css" />
     
   
 
@@ -251,17 +251,17 @@ SCL 适用于 Centos，RHEL 请使用RHSCL</p>
 </ul>
 <h3 id="1-安装仓库-repo"><a class="markdownIt-Anchor" href="#1-安装仓库-repo"></a> 1. 安装仓库 repo</h3>
 <p>参考 GitHub说明文档，执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># yum install centos-release-scl scl-utils-build -y</span><br><span class="hljs-comment"># yum update</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs console"><span class="hljs-meta">#</span><span class="bash"> yum install centos-release-scl scl-utils-build -y</span><br><span class="hljs-meta">#</span><span class="bash"> yum update</span><br></code></pre></td></tr></table></figure>
 <h3 id="2-搜索及安装软件"><a class="markdownIt-Anchor" href="#2-搜索及安装软件"></a> 2. 搜索及安装软件</h3>
 <p>列出所有可用软件，也可以同时使用<code>grep</code>进行过滤</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># yum list all --enablerepo=&#x27;centos-sclo-rh&#x27;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs console"><span class="hljs-meta">#</span><span class="bash"> yum list all --enablerepo=<span class="hljs-string">&#x27;centos-sclo-rh&#x27;</span></span><br></code></pre></td></tr></table></figure>
 <h3 id="3-安装开发工具包"><a class="markdownIt-Anchor" href="#3-安装开发工具包"></a> 3. 安装开发工具包</h3>
 <blockquote>
 <p>安装新版本开发工具包，包含 gcc gcc-c++ gdb等，名称为devtoolset-x-toolchain，<code>x</code>为版本</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装8版本的工具链</span><br><span class="hljs-comment"># yum install devtoolset-8-toolchain</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs console"><span class="hljs-meta">#</span><span class="bash"> 安装8版本的工具链</span><br><span class="hljs-meta">#</span><span class="bash"> yum install devtoolset-8-toolchain</span><br></code></pre></td></tr></table></figure>
 <h3 id="4-使用"><a class="markdownIt-Anchor" href="#4-使用"></a> 4. 使用</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 检查当前gcc版本</span><br><span class="hljs-comment"># gcc --version</span><br>gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44)<br>Copyright © 2015 Free Software Foundation, Inc.<br><span class="hljs-comment"># 使用新的工具链环境</span><br><span class="hljs-comment"># scl enable devtoolset-8 bash</span><br><span class="hljs-comment"># 检查gcc版本</span><br><span class="hljs-comment"># gcc --version</span><br>gcc (GCC) 8.3.1 20190311 (Red Hat 8.3.1-3)<br>Copyright (C) 2018 Free Software Foundation, Inc.<br></code></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs console"><span class="hljs-meta">#</span><span class="bash"> 检查当前gcc版本</span><br><span class="hljs-meta">#</span><span class="bash"> gcc --version</span><br>gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44)<br>Copyright © 2015 Free Software Foundation, Inc.<br><span class="hljs-meta">#</span><span class="bash"> 使用新的工具链环境</span><br><span class="hljs-meta">#</span><span class="bash"> scl <span class="hljs-built_in">enable</span> devtoolset-8 bash</span><br><span class="hljs-meta">#</span><span class="bash"> 检查gcc版本</span><br><span class="hljs-meta">#</span><span class="bash"> gcc --version</span><br>gcc (GCC) 8.3.1 20190311 (Red Hat 8.3.1-3)<br>Copyright (C) 2018 Free Software Foundation, Inc.<br></code></pre></td></tr></table></figure>
 <h3 id="5-其他"><a class="markdownIt-Anchor" href="#5-其他"></a> 5. 其他</h3>
 <ol>
 <li>进入新的<code>bash</code>后可以进行一些工作了，比如编译较新版本的<code>nginx</code>(需要较新版本的gcc)</li>
