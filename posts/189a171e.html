@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="https://pic.fnoop.com/img/20200525223033.jpg?imageslim">
-  <link rel="icon" type="image/png" href="https://pic.fnoop.com/img/20201115170448.png?imageslim">
+  <link rel="icon" href="https://pic.fnoop.com/img/20201115170448.png?imageslim">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,9 +16,12 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="点滴">
+  
+    <meta name="description" content="点滴">
+  
   <meta name="author" content="fnoopv">
   <meta name="keywords" content="linux,Golang,PHP">
+  
   <title>Golang使用ldflags传参 - Fnoopv</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -57,7 +60,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"blog.fnoop.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":"a717bf4aa6fe6f9dbe897a00cb828246","google":"UA-171032310-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"UO6FzJ46U1aWxXz9uUj1u3TI-gzGzoHsz","app_key":"2IV2ayb6J1zofSiLBFxuBpn4","server_url":"https://talk.fnoop.com"}}};
+    var CONFIG = {"hostname":"blog.fnoop.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":200}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":"a717bf4aa6fe6f9dbe897a00cb828246","google":"UA-171032310-1","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"UO6FzJ46U1aWxXz9uUj1u3TI-gzGzoHsz","app_key":"2IV2ayb6J1zofSiLBFxuBpn4","server_url":"https://talk.fnoop.com"}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -158,7 +161,7 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
+    <div class="banner" id="banner" parallax=true
          style="background: url('https://pic.fnoop.com/img/Snipaste_2020-11-15_14-19-04.png?imageslim') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -186,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      140 字
+      141 字
     </span>
   
 
@@ -218,11 +221,11 @@
     
       
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
@@ -230,7 +233,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年12月21日 晚上
+                  本文最后更新于：2021年2月26日 晚上
                 
               </p>
             
@@ -244,14 +247,17 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">taffic<br>  cmd<br>    root.go<br>    version.go<br>  main.go<br>  go.mod<br>  go.sum<br></code></pre></td></tr></table></figure>
 <ol start="2">
-<li>向<code>main.go</code>中传参的方式</li>
+<li>向<code>main.go</code>文件传参的方式</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">go build -ldflags <span class="hljs-string">&quot;-X main.Version=0.0.1 -X &#x27;main.GitVersion=`git version`&#x27;&quot;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>main.Version</code>中的<code>main</code>是<code>main</code>包，不是<code>main.go</code>文件</p>
+</blockquote>
 <ol start="3">
 <li>向子包中的变量传参，比如<code>cmd/version.go</code>，传参方式为</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">go build -ldflags <span class="hljs-string">&quot;-X &#x27;github.com/fnoopv/traffice/cmd/version.Version=0.0.1&#x27; -X &#x27;github.com/fnoopv/traffice/version.GitVersion=`git version`&#x27;&quot;</span><br></code></pre></td></tr></table></figure>
-<p>即为 <code>-X '&#123;go mod名称&#125;/文件路径/文件名称(不带.go后缀).&#123;变量名&#125;'</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">go build -ldflags <span class="hljs-string">&quot;-X &#x27;github.com/fnoopv/traffice/cmd.Version=0.0.1&#x27; -X &#x27;github.com/fnoopv/traffice/cmd.GitVersion=`git version`&#x27;&quot;</span><br></code></pre></td></tr></table></figure>
+<p>即为 <code>-X '&#123;go mod名称&#125;/包名.&#123;变量名&#125;'</code></p>
 
             </div>
             <hr>
@@ -275,10 +281,14 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
-                <div class="post-prevnext row">
+                <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
                     
@@ -306,6 +316,8 @@
             
               <!-- Comments -->
               <article class="comments" id="comments">
+                
+                  
                 
                 
   <div id="waline"></div>
@@ -458,9 +470,6 @@
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":200})
     NProgress.start()
-    document.addEventListener('DOMContentLoaded', function() {
-      window.NProgress && window.NProgress.inc();
-    })
     window.addEventListener('load', function() {
       NProgress.done();
     })
@@ -526,11 +535,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
